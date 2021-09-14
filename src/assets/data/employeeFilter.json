@@ -1,0 +1,27 @@
+[{
+    "title": "Email",
+    "type": "text"
+  },
+	{
+    "title": "Phone",
+    "type": "text"
+  },
+	{
+    "title": "Name",
+    "type": "text"
+  },
+	{
+    "title": "Company",
+    "type": "text"
+  },
+ {
+    "title": "Country",
+    "type": "dropdown",
+    "api": "http://countryapi.gear.host/v1/Country/getCountries",
+    "multiple": false
+  }, 
+	{
+    "title": "Date",
+    "type": "date"
+  }
+]
