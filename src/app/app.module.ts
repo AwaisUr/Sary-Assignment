@@ -14,6 +14,9 @@ import { DatepickerModule } from 'ng2-datepicker';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './unishf/not-found/not-found.component';
+import { PhonePipe } from './unishf/phonepipe';
+import { UrlSerializer } from '@angular/router';
+import { LowerCaseUrlSerializer } from './LowerCaseUrlSerializer';
 
  
 
@@ -24,7 +27,8 @@ import { NotFoundComponent } from './unishf/not-found/not-found.component';
     AppComponent,
 
     EmployeeSearchComponent,
-     NotFoundComponent
+     NotFoundComponent,
+     PhonePipe
 
   ],
 
@@ -36,11 +40,14 @@ import { NotFoundComponent } from './unishf/not-found/not-found.component';
 
     HttpClientModule,
 
-    FormsModule  
+    FormsModule  , ReactiveFormsModule
 
   ],
 
-  providers: [],
+  providers: [{
+    provide: UrlSerializer,
+    useClass: LowerCaseUrlSerializer
+}],
 
   bootstrap: [AppComponent]
 
