@@ -17,7 +17,7 @@
  {
     "title": "Country",
     "type": "dropdown",
-    "api": "http://countryapi.gear.host/v1/Country/getCountries",
+    "api": "<http://countryapi.gear.host/v1/Country/getCountries?pLimit=25&pPage=1>",
     "multiple": false
   }, 
 	{
