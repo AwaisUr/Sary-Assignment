@@ -7,6 +7,7 @@ export interface Employees
     Date:string;
     Country:string;
     Company:string;
+    AlphaCode:string;
 }
   
 export interface EmployeeFitler
@@ -39,4 +40,3 @@ export interface Country{
      Flag:string;
      FlagPng:string;
 }
-
