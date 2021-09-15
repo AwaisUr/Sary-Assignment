@@ -46,8 +46,11 @@ debugger;
         console.log(params);
         this.Emp.Name =  params.user_name !== undefined ? params.user_name : "";        
         this.Emp.Phone =  params.user_phone !== undefined ? params.user_phone : "";        
-        this.Emp.Country =  params.country !== undefined ? params.country : "";
-        this.Emp.Date = params.date !== undefined ? params.date : "";
+        this.Emp.Country =  params.country !== undefined ? params.country : null;
+
+        if(params.date !== undefined)
+          this.Emp.Date = params.date;
+
         this.Emp.Email = params.email !== undefined ? params.email : "";
         this.Emp.Company = params.company !== undefined ? params.company : "";
       }
@@ -78,8 +81,14 @@ debugger;
         }
         else if(element.title.toLowerCase().includes('date'))
         {
-          var dt = new Date(this.Emp.Date);
-          this.SearchEmployeeForm.addControl(element.title, new FormControl(dt));
+          if(this.Emp.Date !== undefined )
+          {
+            var dt = new Date(this.Emp.Date);
+            this.SearchEmployeeForm.addControl(element.title, new FormControl(dt));
+          }
+          else{
+            this.SearchEmployeeForm.addControl(element.title, new FormControl(''));
+          }
         }
         else if(element.title.toLowerCase().includes('phone'))
         {
